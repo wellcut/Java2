@@ -7,6 +7,9 @@
 	<select id="memberSelect" resultType="co.micol.notice.member.service.MemberVO">
 		SELECT * FROM MEMBER
 		WHERE MEMBER_ID = #{memberId}
+	<!-- 	<if test ="memberPassword != null">
+			AND MEMBER_PW = #{memberPassWord}
+		</if> -->
 	</select>
 	<insert id="memberInsert">
 		INSERT INTO MEMBER
@@ -16,6 +19,6 @@
 	<delete id="memberDelete"></delete>
 	<select id="memberLogin" resultType="co.micol.notice.member.service.MemberVO">
 		SELECT * FROM MEMBER
-		WHERE MEMBER_ID = #{memberId} AND MEMBER_PASSWORD = #{memberPassword}
-	</select>
+		WHERE MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPassword}
+	</select> 
 </mapper>

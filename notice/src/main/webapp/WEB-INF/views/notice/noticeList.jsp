@@ -24,17 +24,41 @@
 			</thead>
 			<tbody>
 				<c:forEach items="${notices }" var="n">
-					<tr>
+					<tr onmouseover='this.style.background="#808080";'
+						onmouseleave='this.style.background="#ffffff";'
+						onclick="noticeChoice(${n.noticeId});"
+					>
 						<td align="center">${n.noticeId }</td>
 						<td align="center">${n.noticeWriter }</td>
-						<td>${n.noticeTitle }</td>
+						<td align="center">${n.noticeTitle }</td>
 						<td align="center">${n.noticeWdate }</td>
 						<td align="center">${n.noticeHit }</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+	</div><br>
+	<div>
+		<c:if test="${not empty id }">
+			<button type="button" onclick="location.href='noticeInsertForm.do'">새글작성</button>
+		</c:if>
+	</div>
+	<div>
+		<form id="frm" action="noticeSelect.do" method="post">
+			<input type = "hidden" id = "noticeId" name="noticeId">
+		</form>
+	</div>
+	<div>
+		<jsp:include page="../main/footer.jsp"></jsp:include>
 	</div>
 </div>
+
+<script type="text/javascript">
+	function noticeChoice(id){
+		let frm=document.getElementById("frm");
+		frm.noticeId.value=id;
+		frm.submit();
+	}
+</script>
 </body>
 </html>

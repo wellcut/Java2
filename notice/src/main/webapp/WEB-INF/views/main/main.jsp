@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 <div align="center">
@@ -12,7 +13,10 @@
 		<jsp:include page="menu.jsp" />
 	</div>
 	<div>
-		<h1>Wellcome to My Web Site</h1>
+		<h1>Welcome to My Web Site</h1>
+	</div>
+	<div>
+		<img alt="main" src="img/main.jpg" width=30%>
 	</div>
 	<div>
 		<jsp:include page="footer.jsp"></jsp:include>
