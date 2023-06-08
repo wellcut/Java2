@@ -27,6 +27,9 @@ import co.micol.notice.member.command.MemberList;
 import co.micol.notice.member.command.MemberLogin;
 import co.micol.notice.member.command.MemberLoginForm;
 import co.micol.notice.member.command.MemberLogout;
+import co.micol.notice.product.command.ProductInsert;
+import co.micol.notice.product.command.ProductInsertForm;
+import co.micol.notice.product.command.ProductList;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -45,9 +48,9 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeSelect.do", new NoticeSelect());
 		map.put("/noticeInsertForm.do", new NoticeInsertForm());//게시글 작성 폼호출
 		map.put("/noticeInsert.do", new NoticeInsert());//게시글 등록
-		map.put("/noticeEdit.do", new NoticeEdit());
-		map.put("/noticeUpdate.do", new NoticeUpdate());
-		map.put("/noticeDelete.do", new NoticeDelete());
+		map.put("/noticeEdit.do", new NoticeEdit());//게시글 수정
+		map.put("/noticeUpdate.do", new NoticeUpdate());//게시글 수정 내용 DB에 저장
+		map.put("/noticeDelete.do", new NoticeDelete());//게시글 삭제
 		
 		map.put("/memberList.do", new MemberList()); //멤버 목록 보기
 		map.put("/memberJoin.do", new MemberJoin()); //회원가입 화면 호출
@@ -56,6 +59,13 @@ public class FrontController extends HttpServlet {
 		map.put("/memberLoginForm.do", new MemberLoginForm()); //로그인 폼 호출
 		map.put("/memberLogin.do", new MemberLogin());  //로그인 처리
 		map.put("/memberLogout.do", new MemberLogout()); // 로그아웃 처리
+		
+		map.put("/productList.do", new ProductList());//상품 리스트
+		map.put("/productInsertForm.do", new ProductInsertForm());//상품 등록 폼
+		map.put("/productInsert.do", new ProductInsert());//상품 등록
+		
+		
+		
 	}
 
 	/**
